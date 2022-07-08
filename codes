@@ -1,0 +1,17 @@
+*/ALU VERILOG CODE/*
+*/AUTHOR:VINEETA DEEPTHI/*
+
+module ALU_inst1 (input a_in,b_in,op_in, output y_out,z_out);
+wire data,ac_out,opcode,alu_out,zero;
+ALU_inst1(.a_in(data),.b_in(ac_out),.op_in(opcode),.y_out(alu_out).,z_out(zero));
+always @ (a_in or b_in or op_in)
+begin
+case(op_in)
+0: op_in = a_in + b_in;
+1: op_in = a_in - b_in;
+2: op_in = a_in & b_in;
+3: op_in = a_in | b_in;
+default op_in = z_out;
+endcase
+endmodule
+end
